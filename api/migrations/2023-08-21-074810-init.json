@@ -1,0 +1,426 @@
+{
+	"formatVersion": 4,
+	"modifications": [
+		{
+			"modification": "createEnum",
+			"enumName": "CandidateStatus",
+			"values": [
+				"awaitingInterview",
+				"interviewed",
+				"rejected",
+				"accepted"
+			]
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Candidate",
+				"unique": [],
+				"indexes": [],
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "candidate",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "File",
+				"unique": [],
+				"indexes": [],
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "file",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createEntity",
+			"entity": {
+				"name": "Interview",
+				"unique": [],
+				"indexes": [],
+				"primary": "id",
+				"primaryColumn": "id",
+				"tableName": "interview",
+				"eventLog": {
+					"enabled": true
+				},
+				"fields": {
+					"id": {
+						"name": "id",
+						"columnName": "id",
+						"type": "Uuid",
+						"columnType": "uuid",
+						"nullable": false
+					}
+				}
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Candidate",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Candidate",
+			"field": {
+				"name": "contactInfo",
+				"columnName": "contact_info",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Candidate",
+			"field": {
+				"name": "positionAppliedFor",
+				"columnName": "position_applied_for",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Candidate",
+			"field": {
+				"name": "status",
+				"columnName": "status",
+				"type": "Enum",
+				"nullable": true,
+				"columnType": "CandidateStatus"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Candidate",
+			"field": {
+				"name": "dateOfApplication",
+				"columnName": "date_of_application",
+				"type": "Date",
+				"nullable": true,
+				"columnType": "date"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "url",
+				"columnName": "url",
+				"type": "String",
+				"nullable": false,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "size",
+				"columnName": "size",
+				"type": "Integer",
+				"nullable": true,
+				"columnType": "integer"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "type",
+				"columnName": "type",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "name",
+				"columnName": "name",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "File",
+			"field": {
+				"name": "createdAt",
+				"columnName": "created_at",
+				"type": "DateTime",
+				"nullable": false,
+				"columnType": "timestamptz",
+				"default": "now"
+			},
+			"fillValue": "now"
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "date",
+				"columnName": "date",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "time",
+				"columnName": "time",
+				"type": "DateTime",
+				"nullable": true,
+				"columnType": "timestamptz"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "interviewers",
+				"columnName": "interviewers",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "notes",
+				"columnName": "notes",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "scores",
+				"columnName": "scores",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createColumn",
+			"entityName": "Interview",
+			"field": {
+				"name": "followUpActions",
+				"columnName": "follow_up_actions",
+				"type": "String",
+				"nullable": true,
+				"columnType": "text"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Candidate",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "resume",
+				"target": "File",
+				"inversedBy": "candidateResumes",
+				"nullable": true,
+				"joiningColumn": {
+					"columnName": "resume_id",
+					"onDelete": "set null"
+				}
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "candidateResumes",
+				"target": "Candidate",
+				"ownedBy": "resume"
+			}
+		},
+		{
+			"modification": "createRelation",
+			"entityName": "Interview",
+			"owningSide": {
+				"type": "ManyHasOne",
+				"name": "candidate",
+				"target": "Candidate",
+				"inversedBy": "interviews",
+				"joiningColumn": {
+					"columnName": "candidate_id",
+					"onDelete": "restrict"
+				},
+				"nullable": true
+			},
+			"inverseSide": {
+				"type": "OneHasMany",
+				"name": "interviews",
+				"target": "Interview",
+				"ownedBy": "candidate"
+			}
+		},
+		{
+			"modification": "patchAclSchema",
+			"patch": [
+				{
+					"op": "add",
+					"path": "/roles/recruiter",
+					"value": {
+						"variables": {
+							"personId": {
+								"type": "predefined",
+								"value": "personID"
+							}
+						},
+						"stages": "*",
+						"entities": {
+							"Candidate": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"name": true,
+										"contactInfo": true,
+										"positionAppliedFor": true,
+										"resume": true,
+										"status": true,
+										"dateOfApplication": true,
+										"interviews": true
+									},
+									"update": {
+										"name": true,
+										"contactInfo": true,
+										"positionAppliedFor": true,
+										"resume": true,
+										"status": true,
+										"dateOfApplication": true,
+										"interviews": true
+									},
+									"create": {
+										"name": true,
+										"contactInfo": true,
+										"positionAppliedFor": true,
+										"resume": true,
+										"status": true,
+										"dateOfApplication": true,
+										"interviews": true
+									},
+									"delete": true
+								}
+							},
+							"Interview": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"date": true,
+										"time": true,
+										"interviewers": true,
+										"candidate": true,
+										"notes": true,
+										"scores": true,
+										"followUpActions": true
+									},
+									"update": {
+										"date": true,
+										"time": true,
+										"interviewers": true,
+										"candidate": true,
+										"notes": true,
+										"scores": true,
+										"followUpActions": true
+									},
+									"create": {
+										"date": true,
+										"time": true,
+										"interviewers": true,
+										"candidate": true,
+										"notes": true,
+										"scores": true,
+										"followUpActions": true
+									},
+									"delete": true
+								}
+							},
+							"File": {
+								"predicates": {},
+								"operations": {
+									"read": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"candidateResumes": true
+									},
+									"edit": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"candidateResumes": true
+									},
+									"create": {
+										"url": true,
+										"size": true,
+										"type": true,
+										"name": true,
+										"createdAt": true,
+										"candidateResumes": true
+									},
+									"delete": true
+								}
+							}
+						},
+						"s3": {
+							"**": {
+								"upload": true,
+								"read": true
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}
